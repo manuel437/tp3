@@ -1,11 +1,11 @@
 package com.app.objeto.model.entity;
 
-public class Producto {
+public class Product {
     private int id;
     private String nombre;
     private float precio;
 
-    public Producto(int id) {
+    public Product(int id) {
         this.id = id;
         this.nombre = "indefinido";
         this.precio = 0;
