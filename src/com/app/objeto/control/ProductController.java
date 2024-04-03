@@ -17,9 +17,18 @@ public class ProductController {
         return productRepository;
     }
 
+    public void setProductRepository(ProductRepository productRepository) {
+        this.productRepository = productRepository;
+    }
+
     public ProductView getProductView() {
         return productView;
     }
+
+    public void setProductView(ProductView productView) {
+        this.productView = productView;
+    }
+
     public void createAndAddProduct(){
         Product product = new Product(productRepository.getIdAssig());
         product.setNombre(getProductView().inNombreProduct());

@@ -4,11 +4,14 @@ public class Product {
     private int id;
     private String nombre;
     private float precio;
+    //private Category category;
+
 
     public Product(int id) {
         this.id = id;
         this.nombre = "indefinido";
         this.precio = 0;
+
     }
 
     public int getId() {
