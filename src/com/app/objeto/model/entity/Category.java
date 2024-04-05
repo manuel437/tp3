@@ -7,20 +7,18 @@ import com.app.objeto.view.ProductView;
 public class Category  {
 
     private String nombreCategoria;
-    private int idCategory;
 
-    public Category(int idCategory) {
-        this.idCategory = idCategory;
+
+    public Category( ) {
+
         this.nombreCategoria ="indefinido";
     }
+    public Category(String nombreCat ) {
 
-    public int getIdCategory() {
-        return idCategory;
+        this.nombreCategoria =nombreCat;
     }
 
-    public void setIdCategory(int idCategory) {
-        this.idCategory = idCategory;
-    }
+
 
     public String getNombreCategoria() {
         return nombreCategoria;

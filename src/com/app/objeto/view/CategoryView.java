@@ -18,7 +18,7 @@ public class CategoryView {
 
     public void printCategory(Category category){
 
-        System.out.println("id: " + category.getIdCategory() + "|Categoria: " + category.getNombreCategoria());
+        System.out.println( "|Categoria: " + category.getNombreCategoria());
 
     }
 
@@ -29,14 +29,6 @@ public class CategoryView {
 
     }
 
-    public void menuPrincipal(){
-        System.out.println("");
-        System.out.println("Menu");
-        System.out.println("1- Agregar categoria");
-        System.out.println("2- Mostrar categorias");
-        System.out.println("3- Modificar nombre categoria");
-        System.out.println("4- Eliminar categoria");
-        System.out.println("0- Salir");
-    }
+
 }
 

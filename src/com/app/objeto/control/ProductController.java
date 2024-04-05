@@ -66,4 +66,68 @@ public class ProductController {
             System.out.println("No se pudo encontrar");
         }
     }
+    public void printProductXCategory(){
+        String nomCatBus = this.productRepository.getListProduct().getFirst().getCategoryController().getCategoryView().inNombreCategory();
+        System.out.println("se recibio " + nomCatBus);
+        int i = 0;
+        while(i<= this.getProductRepository().getListProduct().size()){
+            if(this.productRepository.getListProduct().get(i).getCategoryController().getCategoryRepository().comprobarCategoria(nomCatBus) == 1) {
+                System.out.println("se encontro una");
+                this.productView.printProduct(this.getProductRepository().getListProduct().get(i));
+            }
+            i++;
+        }
+
+
+    }
+    public void addCatProduct(){
+        int pos = this.productRepository.posProductoListProductXNombre(this.productView.inNombreProduct());
+        if(pos == -1){
+            System.out.println("No se encontro el producto a agregar");
+        }else{
+            this.productRepository.getListProduct().get(pos).getCategoryController().createAndAddCategory();
+        }
+
+    }
+    public void deleteCatProduct(){
+        int pos = this.productRepository.posProductoListProductXNombre(this.productView.inNombreProduct());
+        if(pos == -1){
+            System.out.println("No se encontro el producto a agregar");
+        }else{
+            this.productRepository.getListProduct().get(pos).getCategoryController().deleteCategoryFromList();
+        }
+
+    }
+    public void modCatProduct(){
+        int pos = this.productRepository.posProductoListProductXNombre(this.productView.inNombreProduct());
+        if(pos == -1){
+            System.out.println("No se encontro el producto a agregar");
+        }else{
+            this.productRepository.getListProduct().get(pos).getCategoryController().modCategory();
+        }
+
+    }
+    public void menuModCategoriasProducto(){
+        int opc = 0;
+        do{
+            this.productView.menuModCategoria();
+            opc = this.productView.getScanner().nextInt();
+            this.productView.getScanner().nextLine();
+            switch(opc){
+                case 1:
+                    this.addCatProduct();
+                    break;
+                case 2:
+                    this.deleteCatProduct();
+                    break;
+                case 3:
+                    this.modCatProduct();
+                    break;
+            }
+            System.out.println("");
+
+
+        }while(opc != 0);
+
+    }
 }

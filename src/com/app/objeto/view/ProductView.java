@@ -18,6 +18,9 @@ public class ProductView {
     public void printProduct(Product product){
         //System.out.println("Producto: " + product.getNombre() + " -------- $: " + product.getPrecio());
         System.out.println("id " + product.getId() + "|Producto: " + product.getNombre() + " -------- $: " + product.getPrecio());
+        System.out.println("categorias pertenecientes:");
+        product.getCategoryController().printCategoryList();
+        System.out.println("");
     }
 
     public float inPrecioProduct(){
@@ -32,21 +35,10 @@ public class ProductView {
         return scanner.nextLine();
 
     }
-
     /*
-    public Product cargarProduct(int id){
-        Product productDevol = new Product(id);
-
-        System.out.println("Ingrese nombre del producto");
-        String nombreProduct = scanner.nextLine();
-        productDevol.setNombre(nombreProduct);
-
-        System.out.println("Ingrese precio del producto");
-        float precioProduct = scanner.nextFloat();
-        this.getScanner().nextLine();
-        productDevol.setPrecio(precioProduct);
-
-        return productDevol;
+    public String inNombreCategoria(){
+        System.out.println("Ingrese nombre de la categoria");
+        return scanner.nextLine();
     }
     */
     public void menuPrincipal(){
@@ -56,7 +48,17 @@ public class ProductView {
         System.out.println("2- Mostrar productos");
         System.out.println("3- Modificar precio producto");
         System.out.println("4- Eliminar producto");
+        System.out.println("5- Modificar categorias de un producto");
+        System.out.println("6- Buscar productos bajo una categoria");
         System.out.println("0- Salir");
+    }
+    public void menuModCategoria(){
+        System.out.println("");
+        System.out.println("Menu");
+        System.out.println("1- Agregar categoria");
+        System.out.println("2- Quitar categoria");
+        System.out.println("3- Modificar categoria");
+        System.out.println("0- Atras");
     }
 }
 

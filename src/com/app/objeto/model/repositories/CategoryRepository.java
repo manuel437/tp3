@@ -6,15 +6,13 @@ import java.util.ArrayList;
 
 public class CategoryRepository {
     private ArrayList<Category> listCategory;
-    private int idAssig = 0;
+
     public CategoryRepository() {
 
         this.listCategory = new ArrayList<>();
     }
 
-    public int getIdAssig() {
-        return idAssig;
-    }
+
 
     public ArrayList<Category> getListCategory() {
         return listCategory;
@@ -22,7 +20,7 @@ public class CategoryRepository {
 
     public void addListCategory(Category category){
         this.listCategory.addLast(category);
-        this.idAssig++;
+
     }
 
     public int posCategoryListXNombre(String nombreBus) {
@@ -37,12 +35,12 @@ public class CategoryRepository {
         }
         return pos;
     }
-    public void deleteCategoryFromList(int id){
+    public void deleteCategoryFromList(String categoryName){
         int flag=0;
 
 
         for (int i=0; i<this.getListCategory().size() && flag==0; i++ ){
-            if(this.getListCategory().get(i).getIdCategory() == id){
+            if(this.getListCategory().get(i).getNombreCategoria() == categoryName){
                 for (int y = i; y<this.getListCategory().size()-1;y++) {
                     this.getListCategory().set(y,this.getListCategory().get(y + 1)) ;
                 }
@@ -51,6 +49,19 @@ public class CategoryRepository {
             }
         }
 
+    }
+
+
+    public int comprobarCategoria(String nomCatBus){
+        int i = 0;
+        int flag = 0;
+        while(i< this.getListCategory().size() || flag == 0){
+            if(this.getListCategory().get(i).getNombreCategoria().equals(nomCatBus)){
+                flag = 1;
+            }
+            i++;
+        }
+        return flag;
     }
 
 

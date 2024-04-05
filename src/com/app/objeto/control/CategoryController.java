@@ -35,7 +35,7 @@ public class CategoryController {
 
 
     public void createAndAddCategory(){
-        Category category = new Category(this.categoryRepository.getIdAssig());
+        Category category = new Category();
         category.setNombreCategoria(getCategoryView().inNombreCategory());
 
         this.categoryRepository.addListCategory(category);
@@ -63,12 +63,14 @@ public class CategoryController {
         }
     }
 
-    public void deleteProductFromListFinal(){
-        int i = this.categoryRepository.posCategoryListXNombre(this.categoryView.inNombreCategory());
+    public void deleteCategoryFromList(){
+        String nom = this.categoryView.inNombreCategory();
+        int i = this.categoryRepository.posCategoryListXNombre(nom);
         if(i != -1){
-            this.categoryRepository.deleteCategoryFromList(i);
+            this.categoryRepository.deleteCategoryFromList(nom);
         }else{
             System.out.println("No se pudo encontrar");
         }
     }
+
 }

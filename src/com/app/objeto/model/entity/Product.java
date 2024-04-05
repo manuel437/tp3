@@ -1,17 +1,28 @@
 package com.app.objeto.model.entity;
 
+import com.app.objeto.control.CategoryController;
+
 public class Product {
     private int id;
     private String nombre;
     private float precio;
-    //private Category category;
+    private CategoryController categoryController;
 
 
     public Product(int id) {
         this.id = id;
         this.nombre = "indefinido";
         this.precio = 0;
+        this.categoryController = new CategoryController();
 
+    }
+
+    public CategoryController getCategoryController() {
+        return categoryController;
+    }
+
+    public void setCategoryController(CategoryController categoryController) {
+        this.categoryController = categoryController;
     }
 
     public int getId() {
