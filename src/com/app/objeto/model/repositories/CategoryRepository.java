@@ -55,8 +55,8 @@ public class CategoryRepository {
     public int comprobarCategoria(String nomCatBus){
         int i = 0;
         int flag = 0;
-        while(i< this.getListCategory().size() || flag == 0){
-            if(this.getListCategory().get(i).getNombreCategoria().equals(nomCatBus)){
+        while(i< this.getListCategory().size() && flag == 0){
+            if(this.getListCategory().get(i).getNombreCategoria().equals(nomCatBus) == true){
                 flag = 1;
             }
             i++;

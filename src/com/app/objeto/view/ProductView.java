@@ -46,18 +46,18 @@ public class ProductView {
         System.out.println("Menu");
         System.out.println("1- Agregar producto");
         System.out.println("2- Mostrar productos");
-        System.out.println("3- Modificar precio producto");
-        System.out.println("4- Eliminar producto");
-        System.out.println("5- Modificar categorias de un producto");
-        System.out.println("6- Buscar productos bajo una categoria");
+        System.out.println("3- Buscar productos bajo una categoria");
+        System.out.println("4- Modificar producto");
+        System.out.println("5- Eliminar producto");
         System.out.println("0- Salir");
     }
-    public void menuModCategoria(){
+    public void menuMod(){
         System.out.println("");
-        System.out.println("Menu");
-        System.out.println("1- Agregar categoria");
-        System.out.println("2- Quitar categoria");
-        System.out.println("3- Modificar categoria");
+        System.out.println("1- Cambiar nombre");
+        System.out.println("2- Cambiar precio");
+        System.out.println("3- Agregar categoria");
+        System.out.println("4- Modificar categoria");
+        System.out.println("5- Quitar categoria");
         System.out.println("0- Atras");
     }
 }

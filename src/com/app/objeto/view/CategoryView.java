@@ -18,7 +18,7 @@ public class CategoryView {
 
     public void printCategory(Category category){
 
-        System.out.println( "|Categoria: " + category.getNombreCategoria());
+        System.out.print( " |" + category.getNombreCategoria() + "| ");
 
     }
 
